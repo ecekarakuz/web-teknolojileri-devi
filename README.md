@@ -1,1 +1,1 @@
-# web-teknolojileri-devi
+# web-teknolojileri-ödevi
