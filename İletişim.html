@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+    <head>
+   
+    <meta charset="utf-8">
+     </head>
+    <body>
+  <form action="" name="uye_formu" method="post" onsubmit="return isValid(this)">
+	<div class="form-group">
+	<input type="text" name="kadi" placeholder="Kullanıcı Adı" class="form-control" >
+	</div>
+	<div class="form-group">
+	<input type="mail" name="email" placeholder="Mail Adresi" class="form-control" >
+	</div>	
+	<div class="form-group">
+	<input type="password" name="sifre1" placeholder="Şifre Belirle" class="form-control" >
+	</div>
+	<div class="form-group">
+	<input type="password" name="sifre2" placeholder="Şifre Tekrarı" class="form-control" >
+	</div>					
+	<input type="submit" name="uyeekle" class="btn btn-success btn-block" value="Kaydı Tamamla">
+	<a href="index.php" class="btn btn-primary btn-block">Temizle</a>					
+</form>
+   <script type="text/javascript">
+function isValid(frm)
+{
+    var kadi = frm.kadi.value;
+    var sifre1 = frm.sifre1.value;
+    var sifre2 = frm.sifre2.value;
+    var email = frm.email.value;
+    var atpos=email.indexOf("@");
+    var dotpos=email.lastIndexOf(".");
+    if ( kadi==null || kadi=="" || kadi.length < 4 )
+    {
+        alert("Kullanıcı adı 4 karakterden az olamaz");
+        return false;
+    }
+    if ( sifre1 == null || sifre1 == "" || sifre2 == null || sifre2 == "")
+    {
+        alert("Şifreyi boş bırakmayın");
+        return false;
+    }
+    if ( !(sifre1 == sifre2) )
+    {
+        alert("Şifreler eşleşmiyor");
+        return false;
+    }
+    if ( atpos<1 || dotpos<atpos+2 || dotpos+2>=email.length )
+    {
+        alert("Geçerli email adresi girin");
+        return false;
+    }      
+    return true;
+}
+</script>
+   
+    
+</body>
+</html>
